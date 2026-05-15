@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(()=>{
 
-    const fetchItems = async (q = 'chicken') => {
+    const fetchItems = async (q = '') => {
       try {
         const url = `/api/external/search?q=${encodeURIComponent(q)}`
         const resultado = await axios.get(url)
