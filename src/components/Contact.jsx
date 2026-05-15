@@ -28,7 +28,7 @@ const Contact = () => {
             <textarea name="message" value={form.message} onChange={handleChange} className="form-control" rows="4" placeholder="Mensaje"></textarea>
           </div>
           <div className="col-12">
-            <button className="btn btn-light" type="submit">Enviar</button>
+            <button className="btn btn-dark" type="submit">Enviar</button>
           </div>
         </form>
       </div>
