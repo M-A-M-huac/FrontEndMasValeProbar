@@ -8,7 +8,8 @@ const UserForm = ({onCreate}) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('/api/users', { name, password })
+      const email = `${name}@noemail.local`
+      const res = await axios.post('/api/users', { name, password, email })
       setName('')
       setPassword('')
       if (res && res.data && (res.status === 201 || res.status === 200) && res.data._id) {

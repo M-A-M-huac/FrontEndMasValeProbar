@@ -8,7 +8,8 @@ const UsuarioPage = ({onLogin}) => {
   const handleCreate = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('/api/users', { name, password })
+      const email = `${name}@noemail.local`
+      const res = await axios.post('/api/users', { name, password, email })
       if (res && res.data && (res.status === 201 || res.status === 200) && res.data._id) {
         try { localStorage.setItem('mvp_user', JSON.stringify(res.data)) } catch {}
         if (onLogin) onLogin(res.data)
